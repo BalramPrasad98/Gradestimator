@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<header class="text-center text-dark">
+
+  <h1><div id=logo> Gradestimator </div></h1>
+  <form class="form-signin form-control-lg" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login" id='index_button'
+    class="w3-button w3-hover-white w3-round-xxlarge"/>
+    <p></p>
+  </form>
+
+</header>
+
+  <div id='login_redirect' class="text-center text-dark">
+    <p class="text-center text-dark">Dont have an account yet?
+      <a class="active" href="{% url 'register' %}">
+        <u>Register here!</u>
+        </a>
+    </p>
+  </div>
+
+</div>
+
+
+{% endblock %}

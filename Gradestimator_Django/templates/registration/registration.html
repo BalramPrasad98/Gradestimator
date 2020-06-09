@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+
+
+  <header class="text-center text-dark">
+
+      <h1>
+        <div id="logo">Gradestimator</div>
+      </h1>
+      <form method="POST" class="form-control-lg">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Register" id='index_button'
+          class="w3-button w3-hover-white w3-round-xxlarge">
+        </form>
+  </header>
+
+
+{% endblock %}

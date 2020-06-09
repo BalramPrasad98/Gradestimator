@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <header class="text-center text-dark">
+
+      <h1 style=font-size:125px><div id=logo>Gradestimator</div></h1>
+      <h3 id=logo>The Smart Grade Predictor</h3>
+      {% if user.is_authenticated %}
+
+      {% else %}
+
+      <div class="w3-container w3-padding-24">
+
+        <a class="w3-button w3-round-xxlarge w3-hover-white btn-lg"
+        href="{% url 'login' %}" role="button" id='index_button'>
+          Get Started
+        </a>
+
+        <a class="w3-button w3-round-xxlarge w3-hover-white btn-lg"
+        href="{% url 'mission' %}" role="button" id='index_button'>
+          Learn More
+        </a>
+
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if user.is_authenticated %}
+  <header class="text-white" id="index_user_info">
+    <div class="container text-left">
+
+      <h1>Welcome {{ user.first_name }}!</h1>
+        <p class="lead">This is your personalized area. As a user you now have
+          access to a demo of the Gradestimator. </p>
+
+        <p class="lead">We are eager to hear from you and are looking to improve
+          and expand the product! Contact balramkprasad@gmail.com. </p>
+
+  </header>
+
+  {% endif %}
+
+{% endblock %}

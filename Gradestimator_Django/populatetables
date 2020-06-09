@@ -1,0 +1,8 @@
+#!/bin/bash
+python populate_Course.py
+python populate_Grade.py
+python populate_Student.py
+python populate_PreReqs.py
+python populate_Transcript.py
+echo ALL DATABASES HAVE BEEN POPULATED
+python manage.py runserver

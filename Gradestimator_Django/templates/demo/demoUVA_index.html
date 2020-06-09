@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Demo{% endblock %}
+
+
+{% block content %}
+<header class="text-center text-dark">
+
+  <h1>University of Virginia: Predicting Computer Science Grades</h1>
+
+    <div class="container" id="demoSection1">
+
+    <p class="lead" style=padding-top:50px> This demo will be using randomly generated data based on
+      required coursework from the Computer Science Department at the
+      University of Virginia.</p>
+
+      <h3 style=padding-top:50px>Let's start by choosing a course!</h3>
+      <form method="POST" class="form-control-lg">
+        {% csrf_token %}
+        {{ course_selection.as_p }}
+        <button type="submit" class="w3-button w3-round-xxlarge
+        w3-hover-white" id='index_button'>
+        Generate Related Courses
+        </button>
+
+      </form>
+
+
+  </header>
+
+{% endblock %}

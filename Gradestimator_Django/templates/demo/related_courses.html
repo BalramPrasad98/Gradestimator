@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Demo2{% endblock %}
+
+{% block content %}
+
+  <header class="text-center text-dark">
+
+    <h1>Perfect! Looks like we're predicting a grade for
+      {% for v in original_course %}
+        {{ v.Original_Course }}
+      {% endfor %}
+    </h1>
+
+    <p class="lead">In this demo we will be assuming that performance in the course you
+    selected can be most closely tied to performance in the prerequisite(s).</p>
+
+    <h3 style=padding:25px>
+      Please enter a grade for the course prerequisites
+    </h3>
+
+    <form method="POST" class="form-control-lg">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="w3-button w3-round-xxlarge
+      w3-hover-white btn-md" id='index_button' name="run_analytics">
+        Run Analytics</button>
+      <p><small>Please note that Analytics may take a few seconds to run. You will be
+      redirected to your results dashboard once it is complete</small></p>
+    </form>
+
+  </header>
+
+
+
+{% endblock %}

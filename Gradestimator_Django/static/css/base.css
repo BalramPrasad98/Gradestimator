@@ -1,0 +1,62 @@
+header {
+  padding: 156px 0 100px;
+}
+
+.navbar {
+  background-color: #358597;
+
+}
+
+#logo {
+  font-family: 'Architects Daughter', cursive;
+}
+
+#index_button {
+  background-color: #358597;
+  border: 2px solid #358597;
+  color: white;
+}
+
+#index_button:hover {
+  background-color: #358597;
+}
+
+#index_user_info {
+  background-color: #358597;
+}
+
+#login_redirect{
+  padding-top: 30px;
+}
+
+#UVA_Card_Header {
+  background-color: #232D4B;
+  color: #E57200;
+}
+
+#uva_button {
+  background-color: #232D4B;
+  border: 2px solid #232D4B;
+  color: #E57200;
+}
+
+#uva_button:hover {
+  background-color: #232D4B;
+}
+
+#demo_title {
+  padding-bottom: 40px;
+}
+
+#dashboard_title {
+  padding-bottom: 50px;
+}
+
+#results_text {
+  font-size: 25px;
+  padding-top: 100px;
+}
+
+section {
+  padding: 150px 0;
+}

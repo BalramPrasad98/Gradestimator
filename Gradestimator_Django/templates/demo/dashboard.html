@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Demo3{% endblock %}
+
+
+{% block content %}
+
+<header class="text-center text-dark">
+
+  <h1><div id=logo> Gradestimator </div></h1>
+
+  <h1 id="dashboard_title">'{{ predicted_course }}' Grade Prediction Dashboard</h1>
+
+    <div class="container">
+
+    <div class="row">
+
+      <div class="col" id="results_columns">
+
+        <p id="results_text"> Based on data from {{ total_students }} students we
+          found {{ significant_students }} students who have a course history
+          that is similar to yours.
+
+          <br> <br>
+
+          Our analytics predicts your most likely grade for
+            '{{ predicted_course}}' is a <b>{{ predicted_grade }}.</b>
+        </p>
+
+        <button type="button" class="w3-button w3-round-xxlarge w3-hover-white"
+        id='index_button' data-toggle="modal" data-target="#methods">
+          View Method
+        </button>
+
+        <div class="modal fade" id="methods" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="methods">Methods</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                The data that used is randomly generate and based on each
+                course's grade distribution as per vagrades.com. We assumed that each
+                student took all of the courses, and their grade was based
+                on that course's corresponding grade breakdown.
+                <br>
+                <br>
+                Each grade was generated independently. <b>Any course grade relationship
+                from this demo is compelely random, as we do not have access to
+               UVA student data.</b>
+                <br>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        {% autoescape off %}
+        {{ pie_chart }}
+        {% endautoescape %}
+      </div>
+
+  </header>
+
+  <div class="w3-container w3-padding-24 text-center">
+
+    <p class="lead"> Want to try a different course or change your grades?</p>
+    <a class="w3-button w3-round-xxlarge w3-hover-white"
+    href="{% url 'demo:UVAdemo' %}" role="button" id='index_button'>
+      Change Course
+    </a>
+
+    <a class="w3-button w3-round-xxlarge w3-hover-white"
+    href="{% url 'demo:demo_two' %}" role="button" id='index_button'>
+      Change Grades
+    </a>
+
+  <div>
+{% endblock %}

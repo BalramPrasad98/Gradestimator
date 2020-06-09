@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<header class="text-center text-dark">
+
+  <h1><div id=logo> - Our Mission - </div></h1>
+  <h3 id=logo>To leverage the power of big data to help student find their perfect
+    courseload and acheive academic success</h3>
+
+</header>
+
+<header class="text-white" id="index_user_info">
+  <div class="container text-left">
+
+    <h1>How it works:</h1>
+    <p class="lead">At Gradestimator, we believe that students should be
+      equipped with the knowledge necessary for them to succeed in the classroom,
+      and that this process starts before they purchase textbooks. Our goal is to
+      provide students with a realistic idea of how they will perform in a given
+      course based on performance in their prior courses. This is done through
+      analytics, where we identify other students who have similar backgrounds,
+      and use their performance to provide an accurate and apt prediction.
+    </p>
+
+    <p class="lead">If you are interested in seeing how the product works please
+      click on the button to the demo below. If you would like to speak with us we
+      can best be contacted at balramkprasad@gmail.com
+    </p>
+
+
+</header>
+
+<header class="text-center text-dark">
+  <div class="container text-left">
+    <p class="lead">If you are interested in seeing how the product works please
+      click on the button to the demo below. If you would like to speak with us we
+      can best be contacted at balramkprasad@gmail.com.
+    </p>
+
+    {% if user.is_authenticated %}
+      <a class="w3-button w3-round-xxlarge w3-hover-white btn-sm"
+      href="{% url 'demo:demo_index' %}" role="button" id='index_button'>
+        Start Demo
+      </a>
+      {% else %}
+      <a class="w3-button w3-round-xxlarge w3-hover-white btn-sm"
+      href="{% url 'login' %}" role="button" id='index_button'>
+        Start Demo
+      </a>
+  {% endif %}
+
+
+  </div>
+</header>
+
+{% endblock %}
