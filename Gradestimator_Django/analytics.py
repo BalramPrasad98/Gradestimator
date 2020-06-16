@@ -3,39 +3,31 @@ import os
 # Need to run this before calling models from application!
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','Gradestimator_Django.settings')
 
+print("One")
+
 import django
 # Import settings
-# django.setup()
+print("two")
+django.setup()
+
+print("Three")
 
 from Analytics.models import SignificantCourse
-from Profiles.models import Student, Grade, Transcript, Prerequisite, Course
 from django.contrib.auth.models import User
+from create_dataframe import total_df
+
+print("Variables and stuff are in")
 
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-
-
-def create_allstudents_dataframe():
-
-    AllTranscripts = Transcript.objects.all()
-    df = pd.DataFrame(columns=['Student', 'Course', 'Grade'])
-
-    # Populate the DataFrame
-    for student in AllTranscripts:
-
-        df = df.append({'Student': student.Student,
-        'Course': student.Course,
-        'Grade': student.Transcript_Grade},
-        ignore_index=True)
-
-    return df
+print("Libraries are in")
 
 def runanalytics(myCourses):
 
     # Columns in df - ['Student', 'Course', 'Grade']
-    total_df = create_allstudents_dataframe()
+    print("Dataframe has been created")
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses
 
