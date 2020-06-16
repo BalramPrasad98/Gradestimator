@@ -8,7 +8,7 @@ print("One")
 import django
 # Import settings
 print("two")
-# django.setup()
+django.setup()
 
 print("Three")
 
