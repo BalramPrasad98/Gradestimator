@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','Gradestimator_Django.settings')
 
 import django
 # Import settings
-# django.setup()
+django.setup()
 
 from Profiles.models import Transcript
 
