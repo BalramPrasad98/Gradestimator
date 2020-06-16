@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','Gradestimator_Django.settings')
 
 import django
 # Import settings
-django.setup()
+# django.setup()
 
 from Analytics.models import SignificantCourse
 from Profiles.models import Student, Grade, Transcript, Prerequisite, Course
