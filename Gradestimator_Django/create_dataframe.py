@@ -16,12 +16,10 @@ def create_allstudents_dataframe():
 
     # Populate the DataFrame
 
-    tt = Transcript.objects.values()
+    tt = list(Transcript.objects.values())
     df = pd.DataFrame(tt)
-    df.columns = ['id', 'Student', 'Course', 'Grade']
+    df.columns = ['Course', 'Student', 'Grade', 'id']
     df = df.drop(['id'], axis=1)
-    df['Course'] = df['Course'].astype(str)
-    print(df)
     return df
 
 total_df = create_allstudents_dataframe()
