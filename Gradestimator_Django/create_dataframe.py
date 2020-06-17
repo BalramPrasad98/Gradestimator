@@ -8,22 +8,20 @@ import django
 django.setup()
 
 from Profiles.models import Transcript
-
 import pandas as pd
 
 def create_allstudents_dataframe():
 
     AllTranscripts = Transcript.objects.all()
-    df = pd.DataFrame(columns=['Student', 'Course', 'Grade'])
 
     # Populate the DataFrame
-    for student in AllTranscripts:
 
-        df = df.append({'Student': student.Student,
-        'Course': student.Course,
-        'Grade': student.Transcript_Grade},
-        ignore_index=True)
-
+    tt = Transcript.objects.values()
+    df = pd.DataFrame(tt)
+    df.columns = ['id', 'Student', 'Course', 'Grade']
+    df = df.drop(['id'], axis=1)
+    df['Course'] = df['Course'].astype(str)
+    print(df)
     return df
 
 total_df = create_allstudents_dataframe()
