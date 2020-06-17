@@ -14,7 +14,6 @@ print("Three")
 
 from Analytics.models import SignificantCourse
 from django.contrib.auth.models import User
-from create_dataframe import total_df
 
 print("Variables and stuff are in")
 
@@ -26,6 +25,8 @@ print("Libraries are in")
 
 def runanalytics(myCourses):
 
+    from create_dataframe import total_df
+    
     # Columns in df - ['Student', 'Course', 'Grade']
     print("Dataframe has been created")
     # Get all of the significant courses and their corresponding grades
