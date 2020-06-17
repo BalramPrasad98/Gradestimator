@@ -27,22 +27,47 @@ def runanalytics(myCourses):
 
     from create_dataframe import total_df
     
-    # Columns in df - ['Student', 'Course', 'Grade']
-    print("Dataframe has been created")
+import os
+# Configure settings for project
+# Need to run this before calling models from application!
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','Gradestimator_Django.settings')
+
+
+import django
+# Import settings
+
+django.setup()
+
+
+from Analytics.models import SignificantCourse
+from django.contrib.auth.models import User
+
+
+import numpy as np
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+def runanalytics(myCourses):
+
+    from create_dataframe import total_df
+
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses
 
     # Get the first course and grade
-    first_course = Selected_Courses[0].SigCourse
-    first_grade = Selected_Courses[0].Grade
+    first_course = str(Selected_Courses[0].SigCourse.Course_ID)
+    first_grade = str(Selected_Courses[0].Grade)
 
     # Finding the total students
     total_students = len(total_df.Student.unique())
 
     # Create a list of the subsetted students
     sub_students = total_df['Student'][(total_df['Course'] == first_course) & (total_df['Grade'] == first_grade)]
+    print(sub_students)
     # Create the initial subsetted frame
     sub_frame = total_df[total_df['Student'].isin(list(sub_students))]
+
 
     # If there is more than 1 significant course then subset for thos courses as well
     if len(Selected_Courses)>1:
@@ -56,9 +81,10 @@ def runanalytics(myCourses):
         # Assign the final frame to our original subsetted frame
         sub_frame = temp_frame
 
+    print(sub_frame)
     # Find the original course that we are predicting a grade for
-    t3 = sub_frame['Course'] == Selected_Courses[0].Original_Course
-
+    t3 = sub_frame['Course'] == str(Selected_Courses[0].Original_Course.Course_ID)
+    print(t3)
     # Get the final frame
     final_frame = sub_frame[t3]
 
@@ -67,6 +93,7 @@ def runanalytics(myCourses):
 
     # Get the values and the grades to input in the pie chart
     grades = final_frame.Grade.astype(str).value_counts().index.tolist()
+    print(grades)
     values = final_frame.Grade.value_counts().tolist()
 
     if not grades:
@@ -84,3 +111,4 @@ def runanalytics(myCourses):
 
 if __name__ == '__main__':
     runanalytics(SignificantCourse.objects.all())
+
