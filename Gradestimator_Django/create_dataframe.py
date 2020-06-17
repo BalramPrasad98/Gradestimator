@@ -12,8 +12,6 @@ import pandas as pd
 
 def create_allstudents_dataframe():
 
-    AllTranscripts = Transcript.objects.all()
-
     # Populate the DataFrame
 
     tt = list(Transcript.objects.values())
