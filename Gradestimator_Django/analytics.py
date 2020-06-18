@@ -23,6 +23,9 @@ def runanalytics(myCourses):
 
     from create_dataframe import total_df
 
+    print("The total frame:")
+    print(total_df)
+    
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses
     print(Selected_Courses)
