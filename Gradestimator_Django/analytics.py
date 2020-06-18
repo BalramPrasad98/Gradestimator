@@ -75,6 +75,5 @@ def runanalytics(myCourses):
     fig.update_layout(showlegend=False)
     return fig, most_likely_grade, predicted_course, total_students, significant_students
 
-
 if __name__ == '__main__':
     runanalytics(SignificantCourse.objects.all())
