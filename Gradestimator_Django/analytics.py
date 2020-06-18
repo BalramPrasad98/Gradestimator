@@ -31,8 +31,8 @@ def runanalytics(myCourses):
     print(Selected_Courses)
 
     # Get the first course and grade
-    first_course = str(Selected_Courses[0].SigCourse.Course_ID)
-    first_grade = str(Selected_Courses[0].Grade)
+    first_course = Selected_Courses[0].SigCourse.Course_ID
+    first_grade = Selected_Courses[0].Grade
     print("The first course is " + first_course)
     print("The first grade is " + first_grade)
 
