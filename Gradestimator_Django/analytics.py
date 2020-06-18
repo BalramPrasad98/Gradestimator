@@ -13,7 +13,6 @@ django.setup()
 from Analytics.models import SignificantCourse
 from django.contrib.auth.models import User
 
-
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -23,31 +22,24 @@ def runanalytics(myCourses):
 
     from create_dataframe import total_df
 
-    print("The total frame:")
-    print(total_df)
-    
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses
-    print(Selected_Courses)
 
     # Get the first course and grade
-    first_course = str(Selected_Courses[0].SigCourse.Course_ID)
+    first_course = Selected_Courses[0].SigCourse.Course_ID
     first_grade = str(Selected_Courses[0].Grade)
-    print("The first course is " + first_course)
-    print("The first grade is " + first_grade)
 
     # Finding the total students
     total_students = len(total_df.Student.unique())
 
     courses_match = total_df['Course'].str.contains(first_course)
     grades_match = total_df['Grade'].str.contains(first_grade)
-    
+
     # Create a list of the subsetted students
     sub_students = total_df['Student'][courses_match & grades_match]
-    print("The subset of students is " + sub_students)
     # Create the initial subsetted frame
     sub_frame = total_df[total_df['Student'].isin(list(sub_students))]
-    print("The subsetted frame is " + sub_frame)
+
 
     # If there is more than 1 significant course then subset for thos courses as well
     if len(Selected_Courses)>1:
