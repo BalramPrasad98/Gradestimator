@@ -38,9 +38,10 @@ def runanalytics(myCourses):
 
     # Create a list of the subsetted students
     sub_students = total_df['Student'][(total_df['Course'] == first_course) & (total_df['Grade'] == first_grade)]
+    print("The subset of students is " + sub_students)
     # Create the initial subsetted frame
     sub_frame = total_df[total_df['Student'].isin(list(sub_students))]
-    print(sub_frame)
+    print("The subsetted frame is " + sub_frame)
 
     # If there is more than 1 significant course then subset for thos courses as well
     if len(Selected_Courses)>1:
