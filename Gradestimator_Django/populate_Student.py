@@ -26,5 +26,5 @@ def populate(students=100):
 
 if __name__ == '__main__':
     print("Populating Students...Please Wait")
-    populate(500)
+    populate(1000)
     print('Students has been populated')
