@@ -39,8 +39,11 @@ def runanalytics(myCourses):
     # Finding the total students
     total_students = len(total_df.Student.unique())
 
+    courses_match = total_df['Course'].str.contains(first_course)
+    grades_match = total_df['Grade'].str.contains(first_grade)
+    
     # Create a list of the subsetted students
-    sub_students = total_df['Student'][(total_df['Course'] == first_course) & (total_df['Grade'] == first_grade)]
+    sub_students = total_df['Student'][courses_match & grades_match]
     print("The subset of students is " + sub_students)
     # Create the initial subsetted frame
     sub_frame = total_df[total_df['Student'].isin(list(sub_students))]
