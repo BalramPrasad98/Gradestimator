@@ -25,10 +25,13 @@ def runanalytics(myCourses):
 
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses
+    print(Selected_Courses)
 
     # Get the first course and grade
     first_course = str(Selected_Courses[0].SigCourse.Course_ID)
     first_grade = str(Selected_Courses[0].Grade)
+    print("The first course is " + first_course)
+    print("The first grade is " + first_grade)
 
     # Finding the total students
     total_students = len(total_df.Student.unique())
@@ -37,7 +40,7 @@ def runanalytics(myCourses):
     sub_students = total_df['Student'][(total_df['Course'] == first_course) & (total_df['Grade'] == first_grade)]
     # Create the initial subsetted frame
     sub_frame = total_df[total_df['Student'].isin(list(sub_students))]
-
+    print(sub_frame)
 
     # If there is more than 1 significant course then subset for thos courses as well
     if len(Selected_Courses)>1:
