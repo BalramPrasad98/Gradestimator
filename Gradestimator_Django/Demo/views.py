@@ -6,10 +6,10 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 from . import models
-from Profiles.models import Student, Course, Grade, Prerequisite, Transcript
+from UVACS_Tables.models import Student, Course, Grade, Prerequisite, Transcript
 from Analytics.models import SignificantCourse
 from .forms import CourseForm, PreReqForm
-from analytics import runanalytics
+from .analytics import runanalytics
 # Create your views here.
 
 class DemoIndex(TemplateView):

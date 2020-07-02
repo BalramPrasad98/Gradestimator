@@ -7,13 +7,12 @@ import django
 # Import settings
 django.setup()
 
-from Profiles.models import Transcript
+from UVACS_Tables.models import Transcript
 import pandas as pd
 
 def create_allstudents_dataframe():
 
     # Populate the DataFrame
-
     tt = list(Transcript.objects.values())
     df = pd.DataFrame(tt)
     df.columns = ['Course', 'Student', 'Grade', 'id']

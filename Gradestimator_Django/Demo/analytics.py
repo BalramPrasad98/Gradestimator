@@ -20,7 +20,7 @@ import plotly.graph_objects as go
 
 def runanalytics(myCourses):
 
-    from create_dataframe import total_df
+    from .create_dataframe import total_df
 
     # Get all of the significant courses and their corresponding grades
     Selected_Courses = myCourses

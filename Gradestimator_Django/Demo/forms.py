@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from Profiles.models import Course, Grade
+from UVACS_Tables.models import Course, Grade
 from Analytics.models import SignificantCourse
 from django.forms import ModelChoiceField
 

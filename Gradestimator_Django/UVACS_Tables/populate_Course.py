@@ -1,13 +1,24 @@
-import os
 # Configure settings for project
 # Need to run this before calling models from application!
-os.environ.setdefault('DJANGO_SETTINGS_MODULE','Gradestimator_Django.settings')
+def __setup_django(root_path, settings):
+    import os
+    import django
+    import sys
 
-import django
-# Import settings
-django.setup()
+    os.chdir(root_path)
 
-from Profiles.models import Course
+    # Django settings
+    sys.path.append(root_path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = settings
+
+    django.setup()
+
+PROJECT_PATH = "/Users/balramprasad/Dropbox/Balram/Gradestimator/Gradestimator_Django"
+PROJECT_SETTING = "Gradestimator_Django.settings"
+
+__setup_django(PROJECT_PATH, PROJECT_SETTING)
+
+from UVACS_Tables.models import Course
 
 
 def populate(course_dict):
