@@ -1,4 +1,4 @@
-Django==2.2.13
+Django==2.2.18
 numba==0.38.0
 numexpr==2.6.5
 numpy==1.14.3
