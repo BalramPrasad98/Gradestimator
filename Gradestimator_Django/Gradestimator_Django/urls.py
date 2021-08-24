@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^mission/$', views.MissionView.as_view(), name='mission'),
     url(r'^ourteam/$', views.OurTeam.as_view(), name='ourteam'),
     url(r'^edit/$', views.EditProfile, name='edit_profile'),
-    url(r"^demo/", include("Demo.urls", namespace="demo")),
+    url(r"^demo/", include("Demo_UVACS.urls", namespace="demo")),
+    url(r"^demo2/", include("Demo_BWoods.urls", namespace="demo2")),
+
 
 ]

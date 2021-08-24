@@ -1,0 +1,7 @@
+#!/bin/bash
+python populate_Course.py
+python populate_Grade.py
+python populate_Student.py
+python populate_Prereqs.py
+python populate_Transcript.py
+echo ALL DATABASES HAVE BEEN POPULATED

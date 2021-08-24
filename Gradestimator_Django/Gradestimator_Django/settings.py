@@ -46,9 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'UVACS_Tables',
-    'Analytics',
-    'Demo',
+    'Demo_UVACS',
+    'Demo_BWoods'
 ]
 
 MIDDLEWARE = [

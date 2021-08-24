@@ -22,8 +22,6 @@ class MissionView(TemplateView):
 class OurTeam(TemplateView):
     template_name = 'about/ourteam.html'
 
-# Used a Library for login page
-
 class Register(CreateView):
     form_class = forms.Registration_Form
     success_url = reverse_lazy("login")

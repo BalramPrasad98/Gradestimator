@@ -1,0 +1,3 @@
+#!/Users/balramprasad/Dropbox/Balram/Gradestimator/Gradestimator_Django/env/bin/python
+from numba.pycc import main
+main()
