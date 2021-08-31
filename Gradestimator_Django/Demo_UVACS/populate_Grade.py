@@ -13,7 +13,7 @@ def __setup_django(root_path, settings):
 
     django.setup()
 
-PROJECT_PATH = "/Users/balramprasad/Dropbox/Balram/Gradestimator/Gradestimator_Django"
+PROJECT_PATH = "/app"
 PROJECT_SETTING = "Gradestimator_Django.settings"
 
 __setup_django(PROJECT_PATH, PROJECT_SETTING)
