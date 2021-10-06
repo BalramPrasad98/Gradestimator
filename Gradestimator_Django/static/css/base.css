@@ -3,7 +3,7 @@ header {
 }
 
 .navbar {
-  background-color: #358597;
+  background-color: #FF7F7F;
 
 }
 
@@ -12,17 +12,17 @@ header {
 }
 
 #index_button {
-  background-color: #358597;
-  border: 2px solid #358597;
+  background-color: #FF7F7F;
+  border: 2px solid #FF7F7F;
   color: white;
 }
 
 #index_button:hover {
-  background-color: #358597;
+  background-color: #FF7F7F;
 }
 
 #index_user_info {
-  background-color: #358597;
+  background-color: #FF7F7F;
 }
 
 #login_redirect{
