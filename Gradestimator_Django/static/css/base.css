@@ -21,6 +21,16 @@ header {
   background-color: #358597;
 }
 
+#demo_button {
+  background-color: #FFFFFF;
+  border: 2px solid #358597;
+  color: black;
+}
+
+#demo_button:hover {
+  background-color: #358597;
+}
+
 #index_user_info {
   background-color: #358597;
 }
