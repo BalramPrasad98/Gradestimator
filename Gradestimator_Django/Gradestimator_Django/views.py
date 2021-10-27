@@ -33,7 +33,7 @@ def EditProfile(request):
 
         if form.is_valid():
             update = form.save()
-            update.user = request.user
+            # update.user = request.user
             update.save()
             return HttpResponseRedirect('/')
     else:
